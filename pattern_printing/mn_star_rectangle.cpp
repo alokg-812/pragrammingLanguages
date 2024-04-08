@@ -12,6 +12,7 @@ int main() {
         }
         cout<<"\n";
     }
+    cout<<"Total Stars: "<<m*n<<endl;
     if (m==n){
         cout<<"Its a Square.\n";
     }
