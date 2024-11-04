@@ -29,11 +29,22 @@ void printPath(int sr, int sc, int er, int ec, string s){ // string will store t
     printPath(sr+1, sc, er, ec, s + 'D'); // Downways
 }
 
+void printPath2(int row, int col, string s){ // string will store the path of the maze
+    if(row<1 || col<1) return;
+    if(row==1 && col == 1){ //destination reached
+        cout<<s<<endl;
+        return;
+    }
+    printPath2(row, col-1, s + 'R'); // Rightways
+    printPath2(row-1, col, s + 'D'); // Downways
+}
+
 int main(){
     int r,c;
     cout<<"Enter rows and cols: ";
     cin>>r>>c;
     cout<<maze(1,1,r,c)<<endl;
-    cout<<maze2(r,c)<<endl;
     printPath(1,1,r,c, "");
+    cout<<endl<<endl<<maze2(r,c)<<endl;
+    printPath2(r,c, "");
 }
