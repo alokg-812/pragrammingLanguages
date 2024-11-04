@@ -10,6 +10,15 @@ int maze(int sr, int sc, int er, int ec){
     return totalWays;
 }
 
+int maze2(int row, int col){
+    if(row<1 || col<1) return 0;
+    if(row==1 && col == 1) return 1;
+    int rightWays = maze2(row, col-1);
+    int downWays = maze2(row-1, col);
+    int totalWays = downWays + rightWays;
+    return totalWays; 
+}
+
 void printPath(int sr, int sc, int er, int ec, string s){ // string will store the path of the maze
     if(sr>er || sc>ec) return ;
     if((sc==ec) && (sr==er)){ //destination reached
@@ -25,5 +34,6 @@ int main(){
     cout<<"Enter rows and cols: ";
     cin>>r>>c;
     cout<<maze(1,1,r,c)<<endl;
+    cout<<maze2(r,c)<<endl;
     printPath(1,1,r,c, "");
 }
