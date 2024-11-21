@@ -1,4 +1,4 @@
-public class PerceOf5 {
+public class fiveSubjectPercentage {
     public static void main(String[] args) {
         //code for % of 5 subjects
         double x1 = 100; //maths
